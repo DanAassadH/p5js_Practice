@@ -13,9 +13,6 @@ function setup() {
     }
    line(mouseX - 6, mouseY, mouseX + 6, mouseY);
     line(mouseX, mouseY - 6, mouseX, mouseY + 6);
-   
-
-   
 
 
   }
