@@ -10,17 +10,17 @@
 let snowflakes = []; // array to hold snowflake objects
 
 function setup() {
-  createCanvas(400, 600);
+  createCanvas(windowWidth, windowHeight);
   fill(240);
   noStroke();
 }
 
 function draw() {
-  background('brown');
-  let t = frameCount / 60; // update time
+  background('#abc123');
+  let t = frameCount / 50; // update time // increse number to make flakes fall straight
 
-  // create a random number of snowflakes each frame
-  for (let i = 0; i < random(5); i++) {
+  // create a random number of snowflakes each frame // incresese number for more flakes
+  for (let i = 0; i < random(2); i++) {
     snowflakes.push(new snowflake()); // append snowflake object
   }
 

@@ -1,0 +1,1 @@
+Setup p5js project : https://timrodenbroeker.de/how-to-use-p5-js-with-visual-studio-code/
