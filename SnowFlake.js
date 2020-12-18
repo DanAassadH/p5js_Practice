@@ -36,12 +36,12 @@ function snowflake() {
   // initialize coordinates
   this.posX = 0;
   this.posY = random(-50, 0);
-  this.initialangle = random(0, 2 * PI);
-  this.size = random(2, 5);
+  this.initialangle = random(0, 2 * PI); // figure out what this is doing
+  this.size = random(2, 25); // increase or decrease snowflake
 
   // radius of snowflake spiral
   // chosen so the snowflakes are uniformly spread out in area
-  this.radius = sqrt(random(pow(width / 2, 2)));
+  this.radius = sqrt(random(pow(width / 2, 2))); // change width/12 for a small stream
 
   this.update = function(time) {
     // x position follows a circle
@@ -50,7 +50,7 @@ function snowflake() {
     this.posX = width / 2 + this.radius * sin(angle);
 
     // different size snowflakes fall at slightly different y speeds
-    this.posY += pow(this.size, 0.5);
+    this.posY += pow(this.size, 0.5); // increase  0.5 to have rainlike effect
 
     // delete snowflake if past end of screen
     if (this.posY > height) {
