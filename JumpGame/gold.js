@@ -4,7 +4,7 @@
 
 class Gold {
     constructor() {
-      this.size = 75;
+      this.size = 55;
       this.x = width;
       this.y = height - this.size;
     }
@@ -16,7 +16,7 @@ class Gold {
     show() {
      // image(tImg, this.x, this.y, this.r, this.r);
   
-      // fill(255, 50);
+     //  fill(255, 50);
       // ellipseMode(CORNER);
        ellipse(this.x, this.y, this.size, this.size);
     }

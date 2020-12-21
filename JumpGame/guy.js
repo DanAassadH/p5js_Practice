@@ -6,14 +6,24 @@ class Guy {
       this.y = height - this.size;
       this.velocity = 0;
       this.gravity = 0.5;
+     // this.fill('#fff');
 
     }
   
     jump() {
+        // if condition for jump if guy is at bottom
         this.velocity = -15;
 
-    }
+    } 
   
+    hits(gold) {
+        let x1 = this.x + this.size * 0.5;
+        let y1 = this.y + this.size * 0.5;
+        let x2 = gold.x + gold.size * 0.5;
+        let y2 = gold.y + gold.size * 0.5;
+        return collideCircleCircle(x1, y1, this.size , x2, y2, gold.size);
+      }
+
    
     move() {
         this.y += this.velocity;
