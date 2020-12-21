@@ -3,5 +3,5 @@
     "*.js",
     "libraries/*.js",
     "c:\\Users\\danis\\.vscode\\extensions\\samplavigne.p5-vscode-1.2.4\\p5types\\global.d.ts"
-  ]
+, "Examples/Clock.js", "Examples/BubbleSort.js", "Examples/InpuAndButton.js", "Examples/MousePress.js", "Examples/SnowFlake.js", "Examples/Slider.js"  ]
 }
