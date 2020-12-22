@@ -1,6 +1,7 @@
 // https://thecodingtrain.com/CodingChallenges/149-tic-tac-toe.html
 // https://youtu.be/GTWrWM1UsnA
 // https://editor.p5js.org/codingtrain/sketches/5JngATm3c
+//https://editor.p5js.org/James-Lang/sketches/swRhflZpi
 
 let board = [
     ['', '', ''],
@@ -141,7 +142,7 @@ let board = [
     line(w * 2, 0, w * 2, height);
     line(0, h, width, h);
     line(0, h * 2, width, h * 2);
-    
+
     for (let j = 0; j < 3; j++){
       for (let i = 0; i < 3; i++) {
         let x = w * i + w / 2;

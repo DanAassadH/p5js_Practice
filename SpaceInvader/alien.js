@@ -1,0 +1,6 @@
+class Alien{
+    constructor()
+    {
+        
+    }
+}
