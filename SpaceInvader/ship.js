@@ -1,26 +1,21 @@
 class Ship {
-  constructor() {
-    this.x = width / 2;
-    this.y = height;
-    this.height = 20;
-    this.width = 40;
+    constructor() {
+        this.x = width / 2;
+        this.xdir = 0;
 
-    this.xdir = 0;
-   
-  }
+        this.show = function () {
+            fill(240, 150, 150);
+            rectMode(CENTER);
+            ellipse(this.x, height - 40, 60, 20);
+        };
 
-  show() {
-    fill(240, 150, 150);
-    noStroke();
-    ellipse(this.x, this.y - 50, this.width, this.height);
-  }
+        this.setDir = function (dir) {
+            this.xdir = dir;
+        };
 
-  move(direct) {
-   // this.x  = this.x + direct;
-   this.x += this.xdir * 5;
-  }
-
-  setDir(direct) {
-    this.xdir  = direct;
-  }
+        this.move = function (dir) {
+            this.x += this.xdir * 5;
+        };
+    }
 }
+   

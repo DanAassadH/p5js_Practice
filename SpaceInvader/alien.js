@@ -1,16 +1,31 @@
-class Alien{
-        constructor() {
-            this.x = 5;
-            this.y = 0;
-            this.height = 20;
-            this.width = 40;
-           
-          }
+class Alien {
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
+        this.r = 10;
 
-    show(xPos) {
-        fill(40, 250, 150);
-        noStroke();
-        rect(this.x * xPos * 15, this.y + 50, this.width, this.height);
-      }
-    
+        this.xdir = 1;
+
+        this.kill = function () {
+            this.r = this.r + 2;
+        };
+
+        this.shiftDown = function () {
+            this.xdir *= -1;
+            this.y += this.r;
+        };
+
+        this.move = function () {
+            this.x = this.x + this.xdir;
+        };
+
+        this.show = function () {
+            noStroke();
+            fill(40, 250, 150);
+            rect(this.x, this.y, this.r * 5, this.r * 2);
+        };
+    }
 }
+
+
+
