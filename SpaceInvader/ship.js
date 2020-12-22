@@ -12,7 +12,7 @@ class Ship {
   show() {
     fill(240, 150, 150);
     noStroke();
-    ellipse(this.x, this.y - 20, this.width, this.height);
+    ellipse(this.x, this.y - 50, this.width, this.height);
   }
 
   move(direct) {
