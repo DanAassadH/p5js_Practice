@@ -2,6 +2,7 @@ let ship;
 let aliens = [];
 let bullets = [];
 let shipScore = 0;
+let finalText;
 
 function setup() {
   createCanvas(600, 400);
@@ -13,13 +14,12 @@ function setup() {
 }
 
 function draw() {
-  background(51,23,56);
+  background(51, 23, 56);
 
   textSize(16);
   fill("violet");
   text(shipScore, 120, 17);
   text("your score = ", 20, 18);
-
 
   ship.show();
   ship.move();
@@ -31,22 +31,12 @@ function draw() {
       if (bullets[i].hits(aliens[j])) {
         //aliens[j].kill();
         bullets[i].boom();
-        aliens.splice(j , 1);
-        shipScore ++ ;
-       
+        aliens.splice(j, 1);
+        shipScore++;
 
-        if(shipScore == 7 ){
-
-            noLoop();
-            fill(105,120,220);
-            rect( 181, 181, 150, 65);
-            textSize(16);
-            fill("violet");
-            
-            text("you won ", 145  , 170);
-            button = createButton("restart");
-            button.position(155, 185);
-            button.mousePressed(restart);
+        if (shipScore == 7) {
+          finalText = "You Won";
+          gameEnd();
         }
       }
     }
@@ -66,6 +56,12 @@ function draw() {
     for (let i = 0; i < aliens.length; i++) {
       aliens[i].shiftDown();
     }
+
+    // console.warn(aliens[0].y);
+    if (aliens[0].y > 340) {
+      finalText = "You Lost";
+      gameEnd();
+    }
   }
 
   for (let i = bullets.length - 1; i >= 0; i--) {
@@ -76,13 +72,13 @@ function draw() {
 }
 
 function keyReleased() {
-  if (key != ' ') {
+  if (key != " ") {
     ship.setDir(0);
   }
 }
 
 function keyPressed() {
-  if (key === ' ') {
+  if (key === " ") {
     let bullet = new Bullet(ship.x, height - 50);
     bullets.push(bullet);
   }
@@ -94,17 +90,31 @@ function keyPressed() {
   }
 }
 
+/******************Game End **************************************  */
+
+function gameEnd() {
+  noLoop();
+  fill(105, 120, 220);
+  rect(181, 181, 150, 65);
+  textSize(16);
+  fill("violet");
+
+  text(finalText, 145, 170);
+  button = createButton("restart");
+  button.position(155, 185);
+  button.mousePressed(restart);
+}
+
 /******************restart button **************************************  */
 
 function restart() {
+  this.hide();
 
-    this.hide();
-
-    for (let i = 0; i < 7; i++) {
-        aliens[i] = new Alien(i * 80 + 80, 60);
-      }
-
-   bullets = [];
-   shipScore = 0;
-   loop();
+  for (let i = 0; i < 7; i++) {
+    aliens[i] = new Alien(i * 80 + 80, 60);
   }
+
+  bullets = [];
+  shipScore = 0;
+  loop();
+}
